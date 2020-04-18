@@ -1,5 +1,5 @@
 const express = require('express')
-const actionsdb = require('../data/helpers/actionModel')
+const projectdb = require('../data/helpers/projectModel')
 
 const router = express.Router()
 
@@ -8,13 +8,13 @@ const router = express.Router()
 // })
 
 router.get('/:id', (req,res) => {
-    actionsdb.get(req.params.id)
+    projectdb.get(req.params.id)
     .then ((proj) => {
         if (proj) {
             res.status(200).json(proj)
         } else {
             res.status(404).json({
-                message: "The action Id does not exist"
+                message: "The project Id does not exist"
             })
         }
     })
@@ -24,7 +24,7 @@ router.get('/:id', (req,res) => {
 })
 
 router.delete('/:id', (req,res) => {
-    actionsdb.remove(req.params.id)
+    projectdb.remove(req.params.id)
     .then((proj) => {
         if (proj) {
             res.status(200).json({
@@ -32,7 +32,7 @@ router.delete('/:id', (req,res) => {
             })
         } else {
             res.status(404).json({
-                message: "There was an error deleting the action or the action doesn't exist"
+                message: "There was an error deleting the project or the project doesn't exist"
             })
         }
     })
