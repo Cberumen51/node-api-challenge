@@ -51,7 +51,7 @@ information that can be used in development like a document or image.
 status code: 200
 
 - [ ] How can we partition our application into sub-applications?
-by using react router we can split the server into multiple pages.
+by using react router we can split the server into multiple pages. 
 
 
 ## Minimum Viable Product
